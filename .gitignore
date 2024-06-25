@@ -1,0 +1,13 @@
+*.o
+*.swp
+*.so
+*.so.*
+*.a
+*.dylib
+*.dll
+
+.idea
+
+*.DS_Store
+
+build
