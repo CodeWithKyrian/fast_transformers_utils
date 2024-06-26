@@ -19,8 +19,10 @@ set(KISSFFT_SRCS kiss/kiss_fft.c  kiss/kiss_fftr.c)
 # Create shared library
 add_library(fast_transformers_utils SHARED ${SOURCES} ${KISSFFT_SRCS})
 
-# Link KISS FFT
-target_link_libraries(fast_transformers_utils m)
+# Conditional linking for math library
+if (UNIX)
+    target_link_libraries(fast_transformers_utils m)
+endif()
 
 # Set library version
 set_target_properties(fast_transformers_utils PROPERTIES VERSION ${PROJECT_VERSION})
