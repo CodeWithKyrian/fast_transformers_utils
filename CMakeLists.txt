@@ -27,6 +27,11 @@ endif()
 # Set library version
 set_target_properties(fast_transformers_utils PROPERTIES VERSION ${PROJECT_VERSION})
 
+# Set 
+if (WIN32)
+    target_compile_definitions(fast_transformers_utils PRIVATE FAST_TRANSFORMERS_UTILS_EXPORTS)
+endif()
+
 # Install library
 install(TARGETS fast_transformers_utils DESTINATION lib)
 

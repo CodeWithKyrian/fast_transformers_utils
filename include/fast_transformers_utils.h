@@ -1,6 +1,16 @@
 #ifndef FAST_TRANSFORMERS_UTILS_H
 #define FAST_TRANSFORMERS_UTILS_H
 
+#ifdef _WIN32
+  #ifdef FAST_TRANSFORMERS_UTILS_EXPORTS
+    #define FAST_TRANSFORMERS_UTILS_API __declspec(dllexport)
+  #else
+    #define FAST_TRANSFORMERS_UTILS_API __declspec(dllimport)
+  #endif
+#else
+  #define FAST_TRANSFORMERS_UTILS_API
+#endif
+
 enum {
     LOG_MEL_NONE = 0,
     LOG_MEL_LOG = 1,

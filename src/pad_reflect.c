@@ -6,7 +6,7 @@ static int calculate_reflect_offset(int i, int w)
     return abs((i + w) % (2 * w) - w);
 }
 
-void pad_reflect(float *input, int length, float *padded, int padded_length)
+FAST_TRANSFORMERS_UTILS_API void pad_reflect(float *input, int length, float *padded, int padded_length)
 {
     int left, right;
 

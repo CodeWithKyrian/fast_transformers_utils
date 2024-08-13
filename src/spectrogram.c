@@ -41,7 +41,7 @@ static void apply_window(float *buffer, int length, float *window)
     }
 }
 
-void spectrogram(
+FAST_TRANSFORMERS_UTILS_API void spectrogram(
     float *waveform, int waveform_length, float *spectrogram, int spectrogram_length, int hop_length,
     int fft_length, float *window, int window_length, int d1, int d1_max, float power, int center,
     float preemphasis, float *mel_filters, int num_mel_filters, int num_frequency_bins, float mel_floor,
