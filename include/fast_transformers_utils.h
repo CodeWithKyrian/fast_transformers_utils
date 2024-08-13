@@ -3,12 +3,12 @@
 
 #ifdef _WIN32
   #ifdef FAST_TRANSFORMERS_UTILS_EXPORTS
-    #define FAST_TRANSFORMERS_UTILS_API __declspec(dllexport)
+    #define TRANSFORMERS_API __declspec(dllexport)
   #else
-    #define FAST_TRANSFORMERS_UTILS_API __declspec(dllimport)
+    #define TRANSFORMERS_API __declspec(dllimport)
   #endif
 #else
-  #define FAST_TRANSFORMERS_UTILS_API
+  #define TRANSFORMERS_API
 #endif
 
 enum {
@@ -18,9 +18,9 @@ enum {
     LOG_MEL_DB = 3
 };
 
-FAST_TRANSFORMERS_UTILS_API void pad_reflect(float *input, int length, float *padded, int padded_length);
+TRANSFORMERS_API void pad_reflect(float *input, int length, float *padded, int padded_length);
 
-FAST_TRANSFORMERS_UTILS_API void spectrogram(
+TRANSFORMERS_API void spectrogram(
     float *waveform, int waveform_length, float *spectrogram, int spectrogram_length, int hop_length, int fft_length, 
     float *window,int window_length, int d1, int d1_max, float power, int center, float preemphasis, float *mel_filters, 
     int num_mel_filters, int num_frequency_bins, float mel_floor, int log_mel, int remove_dc_offset, int do_pad, int transpose
