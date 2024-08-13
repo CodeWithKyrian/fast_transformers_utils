@@ -18,9 +18,9 @@ enum {
     LOG_MEL_DB = 3
 };
 
-void pad_reflect(float *input, int length, float *padded, int padded_length);
+FAST_TRANSFORMERS_UTILS_API void pad_reflect(float *input, int length, float *padded, int padded_length);
 
-void spectrogram(
+FAST_TRANSFORMERS_UTILS_API void spectrogram(
     float *waveform, int waveform_length, float *spectrogram, int spectrogram_length, int hop_length, int fft_length, 
     float *window,int window_length, int d1, int d1_max, float power, int center, float preemphasis, float *mel_filters, 
     int num_mel_filters, int num_frequency_bins, float mel_floor, int log_mel, int remove_dc_offset, int do_pad, int transpose
